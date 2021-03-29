@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.GetHigh{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.GetHighInput{
+width: 300px;
+height: 60px;
+margin: 10px;
+font-size: 25px;
+}
+
+.GetHigh button{
+  width: 300px;
+  height: 60px;
+  margin: 10px;
+  font-size: 20px;
+  }
+
+.cards{
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 500px;
+  height: 200px;
+  margin:  10px;
+}
+
+.EditSalary{
+  width:  100px;
+  height: 30px;
+}
+
+.cards button{
+  width: 100px;
+  height: 30px;
+}
+  
