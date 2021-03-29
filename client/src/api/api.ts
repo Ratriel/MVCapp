@@ -1,1 +1,3 @@
-import { IEmployee} from "../models/ICommunication";
+// import { IEmployee} from "../models/ICommunication";
+
+export default {}
