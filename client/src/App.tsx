@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import IApi from "./api/IApi";
 import Api from "./api/Api";
 import IEmployee from "./models/IEmployee";
+import Context from "./const/Context";
 
 // import Employee from "./components/Employee";
 // import InputData from "./components/InputData";
@@ -51,16 +52,18 @@ export default function App() {
 
   //Render
   return (
-    <div>
-      {
-        <h2>CRUD Template</h2>
-        /*
+    <Context.Provider value={api}>
+      <div>
+        {
+          <h2>CRUD Template</h2>
+          /*
 
        
       <InputData    AddEmployee=  {AddEmployee}  />
      <Employee DeleteEmployee={DeleteEmployee} Data={data} /> 
      */
-      }
-    </div>
+        }
+      </div>
+    </Context.Provider>
   );
 }
