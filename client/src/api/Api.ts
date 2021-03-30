@@ -6,6 +6,6 @@ export default class Api implements IApi {
     const res = await Axios.get("http://localhost:8000/employee");
     return res.data;
   }
-  async delEmployee(id: string): Promise<void> {}
+  async delEmployee(id: number): Promise<void> {}
   async addEmployee(employee: IEmployee): Promise<void> {}
 }

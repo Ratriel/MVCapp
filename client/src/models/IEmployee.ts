@@ -1,4 +1,5 @@
 export default interface IEmployee {
-  EmployeeName: string;
-  EmployeeSalary: string;
+  id: number;
+  name: string;
+  salary: string;
 }
