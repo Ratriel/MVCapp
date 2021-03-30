@@ -1,24 +1,26 @@
-import React from "react";
 import "./App.css";
+import React, { useEffect, useState } from "react";
+import IApi from "./api/IApi";
+import Api from "./api/Api";
+import IEmployee from "./models/IEmployee";
 
-// import React, { useEffect, useState } from "react";
-// import Axios from "axios";
 // import Employee from "./components/Employee";
 // import InputData from "./components/InputData";
 
-function App() {
-  // // States
-  // const [data, setData] = useState([]);
+export default function App() {
+  // Init API
+  const [api] = useState<IApi>(new Api());
 
-  // // getting main data
-  // useEffect(() => {
-  //   Axios.get("http://localhost:8000/employee").then((res) => {
-  //     console.log(res.data);
-  //     setData(res.data);
-  //   });
-  // }, []);
+  // States
+  const [data, setData] = useState<Array<IEmployee>>([]);
 
-  // // adding user
+  // getting main data
+  useEffect(() => {
+    api.getEmployees().then((data) => setData(data));
+  }, [api]);
+  console.log(data);
+
+  // adding user
   // const AddEmployee = (employee) => {
   //   Axios.post("http://localhost:8000/employee", {
   //     name: employee.name,
@@ -62,5 +64,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
