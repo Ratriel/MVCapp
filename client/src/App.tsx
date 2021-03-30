@@ -1,11 +1,12 @@
+import React from "react";
 import "./App.css";
+
 // import React, { useEffect, useState } from "react";
 // import Axios from "axios";
 // import Employee from "./components/Employee";
 // import InputData from "./components/InputData";
 
 function App() {
-
   // // States
   // const [data, setData] = useState([]);
 
@@ -44,14 +45,20 @@ function App() {
   //   );
   // };
 
-  // Update employe 
+  // Update employe
 
   //Render
   return (
-    <div >
-      {/* <h2>CRUD Template</h2>
-    <InputData AddEmployee={AddEmployee} />
-     <Employee DeleteEmployee={DeleteEmployee} Data={data} /> */}
+    <div>
+      {
+        <h2>CRUD Template</h2>
+        /*
+
+       
+      <InputData    AddEmployee=  {AddEmployee}  />
+     <Employee DeleteEmployee={DeleteEmployee} Data={data} /> 
+     */
+      }
     </div>
   );
 }
