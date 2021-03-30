@@ -4,6 +4,7 @@ import IApi from "./api/IApi";
 import Api from "./api/Api";
 import IEmployee from "./models/IEmployee";
 import Context from "./const/Context";
+import Employee from "./components/Employee";
 
 // import Employee from "./components/Employee";
 // import InputData from "./components/InputData";
@@ -19,7 +20,6 @@ export default function App() {
   useEffect(() => {
     api.getEmployees().then((data) => setData(data));
   }, [api]);
-  console.log(data);
 
   // adding user
   // const AddEmployee = (employee) => {
@@ -54,15 +54,9 @@ export default function App() {
   return (
     <Context.Provider value={api}>
       <div>
-        {
-          <h2>CRUD Template</h2>
-          /*
-
-       
-      <InputData    AddEmployee=  {AddEmployee}  />
-     <Employee DeleteEmployee={DeleteEmployee} Data={data} /> 
-     */
-        }
+        <h2>CRUD Template</h2>
+        <Employee employees={data} />
+        {/* <InputData AddEmployee={AddEmployee} /> */}
       </div>
     </Context.Provider>
   );
