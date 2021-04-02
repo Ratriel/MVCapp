@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Context from "../const/Context";
 import IEmployee from "../models/IEmployee";
 
-export default function Employee(props: { employees: Array<IEmployee> }) {
+export default function Employees(props: { employees: Array<IEmployee> }) {
   const employees = props.employees;
   const api = useContext(Context);
 
