@@ -1,13 +1,20 @@
 import "../App.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import IApi from "../api/IApi";
+import Context from "../const/Context";
+import IEmployee from "../models/IEmployee";
 
 const InputData = () => {
   const [name, setName] = useState("");
   const [salary, setSalary] = useState("");
 
+  // Get API from Context
+  const api = useContext<IApi>(Context);
+
   // interfaz
 
-  const employee = {
+  const employee: IEmployee = {
+    id: null,
     name: name,
     salary: salary,
   };
@@ -35,7 +42,13 @@ const InputData = () => {
             setSalary(e.target.value);
           }}
         />
-        <button onClick={() => {}}>Agregar</button>
+        <button
+          onClick={() => {
+            api.addEmployee(employee);
+          }}
+        >
+          Agregar
+        </button>
       </div>
     </div>
   );

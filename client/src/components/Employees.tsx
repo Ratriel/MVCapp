@@ -14,9 +14,7 @@ export default function Employees(props: { employees: Array<IEmployee> }) {
             <div className="cards" key={employee.id}>
               <h3>Name: {employee.name}</h3>
               <h4>Salary: {employee.salary}</h4>
-              <button onClick={() => api.delEmployee(employee.id)}>
-                Delete
-              </button>
+              <button onClick={async () => {}}>Delete</button>
               <input className="EditSalary" type="text" />
               <button>Update</button>
             </div>

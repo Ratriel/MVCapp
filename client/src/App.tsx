@@ -6,6 +6,7 @@ import IEmployee from "./models/IEmployee";
 import Context from "./const/Context";
 import Employees from "./components/Employees";
 import Employee from "./components/Employee";
+import InputData from "./components/InputData";
 
 export default function App() {
   // Init API
@@ -25,6 +26,7 @@ export default function App() {
     <Context.Provider value={api}>
       <div>
         <h2>CRUD Template</h2>
+        <InputData />
         <Employee />
         <Employees employees={data} />
 
