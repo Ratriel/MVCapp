@@ -20,8 +20,8 @@ export default function App() {
   }, [api]);
 
   //Render
-  console.log("Render");
   return (
+    // Set API to Context
     <Context.Provider value={api}>
       <div>
         <h2>CRUD Template</h2>

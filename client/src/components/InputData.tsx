@@ -1,8 +1,7 @@
 import "../App.css";
 import React, { useState } from "react";
 
-
-const InputData = (props:any) => {
+const InputData = () => {
   const [name, setName] = useState("");
   const [salary, setSalary] = useState("");
 
@@ -10,7 +9,7 @@ const InputData = (props:any) => {
 
   const employee = {
     name: name,
-    salary: salary
+    salary: salary,
   };
 
   return (
@@ -36,12 +35,10 @@ const InputData = (props:any) => {
             setSalary(e.target.value);
           }}
         />
-        <button onClick={() => props.AddEmployee(employee)}>Agregar</button>
+        <button onClick={() => {}}>Agregar</button>
       </div>
     </div>
   );
 };
 
-export default InputData  ; 
-
-
+export default InputData;

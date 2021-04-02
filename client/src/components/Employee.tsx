@@ -17,26 +17,23 @@ export default function Employee() {
   });
 
   //Render
-  console.log("Render");
   return (
     <div>
-      <form>
-        <input
-          type="text"
-          placeholder="Enter ID"
-          value={id}
-          onChange={(e) => setID(Number(`${e.target.value}`))}
-        />
-        <button
-          onClick={async () => {
-            const employee = await api.getEmployee(id);
-            setEmployee(employee);
-          }}
-        >
-          Get Employee by ID
-        </button>
-        <Employees employees={[employee]} />
-      </form>
+      <input
+        type="text"
+        placeholder="Enter ID"
+        value={id}
+        onChange={(e) => setID(Number(`${e.target.value}`))}
+      />
+      <button
+        onClick={async () => {
+          const employee = await api.getEmployee(id);
+          setEmployee(employee);
+        }}
+      >
+        Get Employee by ID
+      </button>
+      <Employees employees={[employee]} />
     </div>
   );
 }

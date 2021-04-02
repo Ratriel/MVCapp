@@ -1,4 +1,3 @@
-import { promises } from "node:dns";
 import IEmployee from "../models/IEmployee";
 
 export default interface IApi {
