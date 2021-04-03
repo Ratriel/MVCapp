@@ -1,11 +1,9 @@
-// import express from "express";
+// import { application } from "express";
 // import cors from "cors";
 // import bodyParser from "body-parser";
-// const app: express.Application = express();
 
 // Settings
-
-// app.set("port", 8000);
+// application.set("port", 8000);
 
 // Middlewares
 // app.use(cors());
@@ -16,8 +14,13 @@
 // app.use(() => import("./routes/employees"));
 
 // Starting Server
-// app.listen(app.get("port"), () => {
-//   console.log("Server on port", app.get("port"));
+// application.listen(8000, () => {
+//   console.log("Server on port", 8000);
 // });
 
-console.log("Init");
+// application.get("/", (req, res) => {
+//   res.send("Hello World");
+// });
+// application.listen(8000);
+
+console.log("Init @");
