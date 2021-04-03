@@ -56,7 +56,7 @@ router.post("/employee/", (req, res) => {
   const salary = req.body.salary;
   const id = req.body.id;
   const query = "INSERT INTO employees (id, name, salary) VALUES (?, ?, ?)";
-  mysqlConnection.query(query, [ id, name, salary], (err, rows, fields) => {
+  mysqlConnection.query(query, [id, name, salary], (err, rows, fields) => {
     if (!err) {
       res.json({ Status: "Empleado agregado" });
     } else {
