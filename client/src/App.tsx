@@ -17,8 +17,10 @@ export default function App() {
 
   // Get Data
   useEffect(() => {
-    api.getEmployees().then((data) => setData(data));
+    getData();
   }, [api]);
+
+  const getData = () => api.getEmployees().then((data) => setData(data));
 
   //Render
   return (
@@ -26,11 +28,9 @@ export default function App() {
     <Context.Provider value={api}>
       <div>
         <h2>CRUD Template</h2>
-        <InputData />
+        <InputData getData={() => getData()} />
         <Employee />
-        <Employees employees={data} />
-
-        {/* <InputData AddEmployee={AddEmployee} /> */}
+        <Employees employees={data} getData={() => getData()} />
       </div>
     </Context.Provider>
   );

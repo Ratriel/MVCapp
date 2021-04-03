@@ -2,7 +2,12 @@ import { useContext } from "react";
 import Context from "../const/Context";
 import IEmployee from "../models/IEmployee";
 
-export default function Employees(props: { employees: Array<IEmployee> }) {
+interface Iprops {
+  employees: Array<IEmployee>;
+  getData?: () => void;
+}
+
+export default function Employees(props: Iprops) {
   const employees = props.employees;
   const api = useContext(Context);
 
@@ -14,7 +19,14 @@ export default function Employees(props: { employees: Array<IEmployee> }) {
             <div className="cards" key={employee.id}>
               <h3>Name: {employee.name}</h3>
               <h4>Salary: {employee.salary}</h4>
-              <button onClick={async () => {}}>Delete</button>
+              <button
+                onClick={async () => {
+                  await api.delEmployee(employee.id as number);
+                  props.getData?.();
+                }}
+              >
+                Delete
+              </button>
               <input className="EditSalary" type="text" />
               <button>Update</button>
             </div>

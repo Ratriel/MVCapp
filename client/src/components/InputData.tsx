@@ -4,7 +4,11 @@ import IApi from "../api/IApi";
 import Context from "../const/Context";
 import IEmployee from "../models/IEmployee";
 
-const InputData = () => {
+interface Iprops {
+  getData?: () => void;
+}
+
+const InputData = (props: Iprops) => {
   const [name, setName] = useState("");
   const [salary, setSalary] = useState("");
 
@@ -12,12 +16,6 @@ const InputData = () => {
   const api = useContext<IApi>(Context);
 
   // interfaz
-
-  const employee: IEmployee = {
-    id: null,
-    name: name,
-    salary: salary,
-  };
 
   return (
     <div>
@@ -43,8 +41,13 @@ const InputData = () => {
           }}
         />
         <button
-          onClick={() => {
-            api.addEmployee(employee);
+          onClick={async () => {
+            const employee: IEmployee = {
+              name: name,
+              salary: salary,
+            } as any;
+            api.addEmployee?.(employee);
+            props.getData?.();
           }}
         >
           Agregar
